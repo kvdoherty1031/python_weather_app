@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class = "jumbotron">
+			<div class = "container">
+				{% if weather %}
+					<h1>{{ weather }}</h1>
+				{% else %}
+					<h1>See your local weather below</h1>
+					<form action="/" class="form_inline">
+						<div class="form-group">
+							<input type="text" name="zipcode" placeholder="enter your Zip here">
+						</div>
+						<input type="submit" value="Submit" class="btn btn-primary">
+					</form>
+				{% endif %}
+				<a href="{{ url_for('about') }}">About this Project</a>
+			</div>
+		</div>
+	</body>
+</html>
